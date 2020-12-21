@@ -1,67 +1,296 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+@keyframes fadein {
+	from{
+    	opacity: 0;
+     	transform: scale(.8);
+	}
+	to {
+    	opacity: 1;
+		transform: scale(1);
+	}
 }
-
-h1{
-    font-weight: 500;
-    color: lightblue;
-    transition: 0.5s ease;
+@keyframes fadeout {
+	from{
+    	opacity: 1;
+     	transform: scale(1);
+	}
+	to {
+    	opacity: 0;
+		transform: scale(.8);
+	}
 }
-
-h1:hover{
-    color: crimson;
+@keyframes tilt {
+    from{transform: rotate(10deg);}
+    to  {transform: rotate(-10deg);}
 }
-
-body{
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0;
-    min-height: 100vh;
-    text-align: center;
-    padding: 5rem;
-    font-size: 0vw;
-    transition: 0.5s ease;
-    animation-name: scaleUp;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-}
-
-body p{
-    transition: 0.5s ease;
-    color: crimson; 
-}
-
-body p:hover{
-    color: lightblue;
-}
-
-
-.dark{
-    color: white;
-    background-color: #1a1a1a;
-}
-
-.dark:hover{
-    background-color: #1f1f1f;
-    transition: 0.5s ease;
-}
-
-@keyframes scaleUp {
-    0%{
-        font-size: 0vw;
-    }
-    50%{
-        font-size: 5vw;
-    }
-    100%{
-        font-size: 5vw;
+@keyframes riseup {
+    from{
+    	opacity: 0;
+    	bottom: -195px;}
+    to  {
+    	opacity: 1;
+    	bottom: 0;
     }
 }
+body {
+	color: #000;
+	background: #BA7D3F url('/web/20180901124451im_/http://tbmods.io/site-assets/bg.png');
+	background-size: 63px;
+	min-width: 600px;
+	font-family: Lato, sans-serif;
+	text-align: center;
+	margin: 4px 0;
+	padding: 0;
+}
+body.overlayOpen{
+	overflow: hidden;
+}
+a:link{
+  color: #C88C32;
+}
+a:visited{
+  color: #D2B48C;
+}
+a:active{
+  color: #B45F04;
+}
+.fontBree, .teddyText1, .overlayHeader{
+  font-family: 'Bree Serif', sans-serif;
+}
+.fontLato, .teddyText2{
+  font-family: Lato, sans-serif;
+}
+.teddyText1{
+  font-size: 40pt;
+  text-shadow: 0 3px 4px rgba(0, 0, 0, .3);
+}
+.teddyText2{
+  font-size: 38pt;
+  text-shadow: 0 3px 4px rgba(0, 0, 0, .3);
+}
+.miniText{
+  display: block;
+  font-size: 12pt;
+  line-height: 0;
+  text-shadow: 0 3px 4px rgba(0, 0, 0, .3);
+  margin: 8px 0 0 0;
+  padding: 0 0 8px 0;
+}
+a.continueLink, a#chromeStoreBadge, div#inlineSocial a {
+	display: block;
+	width: 400px;
+	color: #FFF;
+	background-color: rgba(0, 0, 0, .6);
+	font-size: 18pt;
+	text-decoration: none;
+	border-radius: 10px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	margin: 8px auto;
+	padding: 16px;
+  transition: background-color .5s ease-in, box-shadow .5s ease-in;
+}
+a.continueLink:hover, a#chromeStoreBadge:hover, div#inlineSocial a:hover {
+  background-color: #000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .45);
+}
+img.continueLinkImg{
+	display: inline-block;
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin: -14px;
+}
+span.continueLinkIntroText{
+	display: block;
+	font-size: 12pt;
+	line-height: 12pt;
+}
+span.continueLinkPrimaryText{
+	display: block;
+}
+div.continueLinkArrow{
+	display: block;
+	float: right;
+	width: 32px;
+	height: 52px;
+	background-image: url('data:image/svg+xml;utf8,<svg%20viewBox="0%200%2017%2016"%20version="1.1"%20xmlns="http://www.w3.org/2000/svg"%20xmlns:xlink="http://www.w3.org/1999/xlink"><g%20stroke="none"%20stroke-width="1"%20fill="none"%20fill-rule="evenodd"><path%20d="M6.077,1.162%20C6.077,1.387%206.139,1.612%206.273,1.812%20L10.429,8.041%20L6.232,14.078%20C5.873,14.619%206.019,15.348%206.56,15.707%20C7.099,16.068%207.831,15.922%208.19,15.382%20L12.82,8.694%20C13.084,8.3%2013.086,7.786%2012.822,7.39%20L8.233,0.51%20C7.873,-0.032%207.141,-0.178%206.601,0.181%20C6.26,0.409%206.077,0.782%206.077,1.162%20L6.077,1.162%20Z"%20fill="%23FFF"></path></g></svg>');
+	background-repeat: no-repeat;
+	margin-top: -37px;
+}
+a#chromeStoreBadge{
+  display: block;
+  background-color: rgba(255, 255, 255, .6);
+  width: 206px;
+  height: 58px;
+  border: 0;
+  margin: 0 auto;
+}
+a#chromeStoreBadge:hover {
+	background-color: #FFF;
+}
+div#inlineSocial a {
+	display: inline-block;
+	color: #000;
+	background-color: rgba(255, 255, 255, .6);
+	width: 120px;
+	font-size: 14pt;
+	margin: 4px 4px;
+	padding: 4px;
+}
+div#inlineSocial a:hover {
+	background-color: #FFF;
+}
+div#inlineSocial {
+	margin-top: 4px;
+}
+a.continueLink#view-info{
+	background-color: rgba(180, 95, 4, .6);
+}
+a.continueLink#view-info:hover{
+	background-color: #B45F04;
+}
+a#media-gallery {
+	color: #FFF;
+	background-color: rgba(170, 0, 0, .6);
+}
+a#media-gallery:hover {
+	background-color: #AA0000;
+}
+a.continueLink#web-preview{
+	background-color: rgba(8, 116, 37, .6);
+}
+a.continueLink#web-preview:hover{
+	background-color: #087425;
+}
+div#inlineSocial a#discord-invite {
+	color: #FFF;
+	background-color: rgba(114, 137, 218, .6);
+}
+div#inlineSocial a#discord-invite:hover {
+	background-color: #7289DA;
+}
+div#inlineSocial a#subreddit {
+	color: #FFF;
+	background-color: rgba(255, 69, 0, .6);
+}
+div#inlineSocial a#subreddit:hover {
+	background-color: #FF4500;
+}
+div#inlineSocial a#youtube-channel {
+	color: #FFF;
+	background-color: rgba(255, 0, 0, .6);
+}
+div#inlineSocial a#youtube-channel:hover {
+	background-color: #FF0000;
+}
+div#footer img {
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+}
+div#bgDismissDiv{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	cursor: pointer;
+}
+.overlay{
+	position: fixed;
+	display: block;
+	visibility: hidden;
+	top: 10%;
+	left: 50%;
+	color: #000;
+	background-color: rgba(255, 255, 255, .95);
+	height: 80%;
+	box-shadow: 0 0 16px rgba(0, 0, 0, .4);
+	border-radius: 8px;
+	margin-left: 50%;
+	overflow: scroll;
+	padding: 0;
+}
+@media (max-height: 400px), (max-width: 816px){
+	body .overlay{
+		top: 0;
+		left: 0;
+		width: 100% !important;
+		height: 100% !important;
+		border-radius: 0;
+		margin: 0 !important;
+	}
+}
+.overlayShown{
+	visibility: visible;
+	opacity: 1;
+	animation-name: fadein;
+	animation-duration: .2s;
+}
+.overlayHidden{
+	visibility: visible;
+	opacity: 0;
+	animation-name: fadeout;
+	animation-duration: .2s;
+}
+.overlayHeader{
+	font-size: 16pt;
+	margin-top: 8px;
+}
+.TB_modernButton, a.TB_modernButton{
+  display: inline-block;
+  color: #FFF;
+  background-color: rgba(0, 128, 255, .6);
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 4px;
+  padding: 4px 8px;
+}
+#TB_embeddedChangelog{
+  margin-top: 0;
+  padding-left: 14px;
+}
+#TB_embeddedChangelog li{
+  color: #000;
+  font-size: 11pt;
+  text-align: left;
+  margin: 8px 0 16px 0;
+  }
+#TB_embeddedChangelog .TB_skinPreview{
+  width: 100px;
+  height: 100px;
+}
+.TB_overlayThemeLight #TB_embeddedChangelog li{
+  color: #000;
+}
+#TB_embeddedChangelog ul{
+  margin: 2px 4px;
+  padding-left: 5px;
+}
+#TB_embeddedChangelog ul li{
+  margin: 0;
+}
+
+/*
+     FILE ARCHIVED ON 12:44:51 Sep 01, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:58:19 Dec 21, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  exclusion.robots.policy: 0.222
+  RedisCDXSource: 3.935
+  exclusion.robots: 0.238
+  PetaboxLoader3.datanode: 193.353 (5)
+  captures_list: 143.402
+  CDXLines.iter: 15.929 (3)
+  PetaboxLoader3.resolve: 64.66 (2)
+  esindex: 0.01
+  load_resource: 169.804 (2)
+  LoadShardBlock: 120.662 (3)
+*/
