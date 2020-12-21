@@ -1,0 +1,79 @@
+.TB_overlay{
+  position: absolute;
+  display: block;
+  bottom: 0;
+  color: #FFF;
+  background-color: rgba(0,0,0,.6);
+  width: 80%;
+  margin: 0 10%;
+  text-align: center;
+  box-shadow: 0 0 16px rgba(0,0,0,0.4);
+  border-radius: 8px 8px 0 0;
+  opacity: 1;
+  padding: 4px 0 8px 0;
+  animation: riseup .8s ease-out;
+}
+.TB_navTabs{
+  list-style-type: none;
+  line-height: 12pt;
+}
+.TB_navTabs li{
+  display: inline-block;
+  color: #FFF;
+  background-color: transparent;
+  font-family: Lato, sans-serif;
+  font-size: 10pt;
+  line-height: 12pt;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-left-width: 0;
+  border-right-width: 0;
+  padding: 4px 8px;
+}
+.TB_navTabs li[tb-activetab='y']{
+  color: #FFF;
+  background-color: rgba(186,125,63,.6);
+}
+.TB_navTabs li:first-child{
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-left-width: 1px;
+}
+.TB_navTabs li:last-child{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right-width: 1px;
+}
+.TB_aTeddyText {
+  font-family: Bree Serif, sans-serif;
+  font-size: 24pt;
+}
+.TB_bTeddyText {
+  font-family: Lato, sans-serif;
+  font-size: 22pt;
+}
+@media (max-height: 775px), (max-width: 675px){
+	body .TB_overlay{
+		display: none;
+	}
+}
+/*
+     FILE ARCHIVED ON 13:29:52 Sep 01, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:09:33 Dec 21, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  exclusion.robots: 0.185
+  load_resource: 271.472 (2)
+  PetaboxLoader3.datanode: 95.705 (5)
+  exclusion.robots.policy: 0.175
+  esindex: 0.011
+  PetaboxLoader3.resolve: 147.029 (2)
+  RedisCDXSource: 0.836
+  LoadShardBlock: 119.702 (3)
+  CDXLines.iter: 15.307 (3)
+  captures_list: 138.383
+*/
