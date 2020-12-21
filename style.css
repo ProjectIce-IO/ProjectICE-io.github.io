@@ -33,7 +33,7 @@
 }
 body {
 	color: #000;
-	background: #BA7D3F url('/web/20180901124451im_/http://tbmods.io/site-assets/bg.png');
+	background: #BA7D3F url('/site-assets/bg.png');
 	background-size: 63px;
 	min-width: 600px;
 	font-family: Lato, sans-serif;
